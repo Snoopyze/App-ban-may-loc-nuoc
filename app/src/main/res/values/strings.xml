@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">MTC</string>
+    <string name="trang_chu">Trang chủ</string>
+    <string name="meo_hay">Mẹo hay</string>
+    <string name="tai_khoan">Tài khoản</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

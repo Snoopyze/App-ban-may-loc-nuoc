@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/trangchu"
+        android:title="@string/trang_chu"
+        android:icon="@drawable/icon_trangchu"
+
+        />
+    <item
+        android:id="@+id/meohay"
+        android:title="@string/meo_hay"
+        android:icon="@drawable/icon_meohay"/>
+    <item
+        android:id="@+id/taikhoan"
+        android:title="@string/tai_khoan"
+        android:icon="@drawable/icon_taikhoan"/>
+
+</menu>
