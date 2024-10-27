@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primary_color">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/primary_color"
+    tools:context=".DangNhap">
 
     <RelativeLayout
         android:id="@+id/headerSection"
@@ -66,7 +68,7 @@
         android:layout_height="match_parent"
         android:layout_below="@id/headerSection"
         app:cardCornerRadius="12dp"
-        android:cardElevation="8dp"
+        app:cardElevation="8dp"
         app:cardBackgroundColor="@color/beige">
 
         <LinearLayout
@@ -145,6 +147,7 @@
                     android:textSize="16sp"/>
 
                 <TextView
+                    android:id="@+id/singupTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=" Đăng kí ngay"

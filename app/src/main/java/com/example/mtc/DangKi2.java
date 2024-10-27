@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -17,6 +18,7 @@ public class DangKi2 extends AppCompatActivity {
 
     private TextView countDownTxt, resendCodeTxt;
     private CountDownTimer countDownTimer;
+    private ImageView backBtn;
     private static final int OTP_VALID_DURATION = 120000;
 
     @Override
@@ -24,10 +26,18 @@ public class DangKi2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dangki2);
 
+        backBtn = findViewById(R.id.icBackDK2);
         countDownTxt = findViewById(R.id.countDownTxt);
         resendCodeTxt = findViewById(R.id.resendCodeTxt);
         Button contBtn = findViewById(R.id.contBtn);
 
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DangKi2.this, DangKi.class);
+                startActivity(intent);
+            }
+        });
         String phoneNumber = getIntent().getStringExtra("PHONE_NUMBER");
 
         // Hiển thị số điện thoại

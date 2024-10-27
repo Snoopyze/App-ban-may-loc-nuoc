@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primary_color">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/primary_color"
+    tools:context=".DangKi2">
 
     <RelativeLayout
         android:id="@+id/headerSection"
@@ -15,7 +17,7 @@
         android:layout_marginBottom="40dp">
 
         <ImageView
-            android:id="@+id/icBack"
+            android:id="@+id/icBackDK2"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_alignParentStart="true"
@@ -41,7 +43,7 @@
         android:layout_height="match_parent"
         android:layout_below="@id/headerSection"
         app:cardCornerRadius="12dp"
-        android:cardElevation="8dp"
+        app:cardElevation="8dp"
         app:cardBackgroundColor="@color/beige">
 
         <LinearLayout

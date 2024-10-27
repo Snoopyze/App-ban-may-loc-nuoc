@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/primary_color"
-    tools:context=".DangKi3">
+    tools:context=".QuenMatKhau3">
 
     <RelativeLayout
         android:id="@+id/headerSection"
@@ -17,7 +17,7 @@
         android:layout_marginBottom="40dp">
 
         <ImageView
-            android:id="@+id/icBack"
+            android:id="@+id/icBackQMK3"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_alignParentStart="true"
@@ -43,7 +43,7 @@
         android:layout_height="match_parent"
         android:layout_below="@id/headerSection"
         app:cardCornerRadius="12dp"
-        android:cardElevation="8dp"
+        app:cardElevation="8dp"
         app:cardBackgroundColor="@color/beige">
 
         <LinearLayout

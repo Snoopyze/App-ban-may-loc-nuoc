@@ -17,7 +17,7 @@
         android:layout_marginBottom="40dp">
 
         <ImageView
-            android:id="@+id/icBack"
+            android:id="@+id/icBackDK"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_alignParentStart="true"
@@ -43,7 +43,7 @@
         android:layout_height="match_parent"
         android:layout_below="@id/headerSection"
         app:cardCornerRadius="12dp"
-        android:cardElevation="8dp"
+        app:cardElevation="8dp"
         app:cardBackgroundColor="@color/beige">
 
         <LinearLayout
@@ -73,7 +73,7 @@
                 android:id="@+id/signupBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Xác nhận"
+                android:text="Gửi mã xác thực"
                 android:background="@drawable/rounded_corners_button_c"
                 android:textColor="@color/white"
                 android:textSize="20sp"
@@ -95,6 +95,7 @@
                     android:textSize="16sp"/>
 
                 <TextView
+                    android:id="@+id/logInTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=" Đăng nhập ngay"

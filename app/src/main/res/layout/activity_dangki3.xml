@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primary_color">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/primary_color"
+    tools:context=".DangKi3">
 
     <RelativeLayout
         android:id="@+id/headerSection"
@@ -15,7 +17,7 @@
         android:paddingBottom="16dp">
 
         <ImageView
-            android:id="@+id/icBack"
+            android:id="@+id/icBackDK3"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_alignParentStart="true"
@@ -40,7 +42,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/headerSection"
-        android:cardElevation="8dp"
+        app:cardElevation="8dp"
         app:cardBackgroundColor="@color/beige"
         app:cardCornerRadius="12dp">
 
@@ -83,7 +85,6 @@
                 android:textColor="@color/black"
                 android:textSize="14sp" />
 
-            <!-- EditText cho Họ và Tên -->
             <EditText
                 android:id="@+id/fullName"
                 android:layout_width="match_parent"
@@ -94,7 +95,6 @@
                 android:padding="12dp"
                 android:textSize="16sp" />
 
-            <!-- EditText cho Mật khẩu -->
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -120,7 +120,6 @@
                     android:src="@drawable/icon_eye_c" />
             </RelativeLayout>
 
-            <!-- EditText cho Nhập lại Mật khẩu -->
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -146,7 +145,6 @@
                     android:src="@drawable/icon_eye_c" />
             </RelativeLayout>
 
-            <!-- EditText cho Mã giới thiệu -->
             <EditText
                 android:id="@+id/introCode"
                 android:layout_width="match_parent"
@@ -157,9 +155,8 @@
                 android:padding="12dp"
                 android:textSize="16sp" />
 
-            <!-- Nút Đăng Kí -->
             <Button
-                android:id="@+id/loginButton"
+                android:id="@+id/signupButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/rounded_corners_button_c"
