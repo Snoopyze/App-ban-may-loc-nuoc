@@ -13,6 +13,33 @@
         android:theme="@style/Theme.MTC"
         tools:targetApi="31">
         <activity
+            android:name=".DangNhap"
+            android:exported="false" />
+        <activity
+            android:name=".QuenMatKhau3"
+            android:exported="false" />
+        <activity
+            android:name=".QuenMatKhau2"
+            android:exported="false" />
+        <activity
+            android:name=".QuenMatKhau"
+            android:exported="false" />
+        <activity
+            android:name=".QuenMatKha"
+            android:exported="false" />
+        <activity
+            android:name=".DangKi3"
+            android:exported="false" />
+        <activity
+            android:name=".DangKi2"
+            android:exported="false" />
+        <activity
+            android:name=".DangKi"
+            android:exported="false" />
+        <activity
+            android:name=".DangNhapFragment"
+            android:exported="false" />
+        <activity
             android:name=".XinChao"
             android:exported="true">
             <intent-filter>
@@ -21,8 +48,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
     </application>
 
 </manifest>
