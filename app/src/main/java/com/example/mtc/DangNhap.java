@@ -48,8 +48,11 @@ public class DangNhap extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-          //      Intent intent = new Intent(DangNhap.this, TrangChu.class);
-          //      startActivity(intent);
+                Intent intent = new Intent(DangNhap.this, TrangChu.class);
+                startActivity(intent);
+
+//                Intent intent = new Intent(DangNhap.this, TrangChu.class);
+//                startActivity(intent);
             }
         });
         signupTxt = findViewById(R.id.singupTxt);
