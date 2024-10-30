@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/sp_sanpham"
+        android:title="@string/sp_sanpham"
+        android:icon="@drawable/icon_trangchu"
+        />
+    <item
+        android:id="@+id/sp_donhang"
+        android:title="@string/sp_donhang"
+        android:icon="@drawable/icon_donhang_m"/>
+    <item
+        android:id="@+id/sp_nhucau"
+        android:title="@string/sp_nhucau"
+        android:icon="@drawable/icon_nhucausanpham"/>
+    <item
+        android:id="@+id/sp_yeuthich"
+        android:title="@string/sp_yeuthich"
+        android:icon="@drawable/icon_yeuthich"/>
+</menu>

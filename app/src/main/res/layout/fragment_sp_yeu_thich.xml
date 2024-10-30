@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/back_ground_color"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".sp_YeuThichFragment"
+    >
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/yeu_thich"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_marginTop="50dp"/>
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/sp_yt_tablayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:contentDescription=" "
+            app:tabSelectedTextColor="@color/primary_color"
+            app:tabIndicatorColor="@color/primary_color"
+            />
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/sp_yt_viewpager2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            />
+
+    </LinearLayout>
+
+</FrameLayout>

@@ -7,4 +7,6 @@
     <color name="grey">#D3D3D3</color>
     <color name="bottom_nav_default_color">#888888</color>
     <color name="back_ground_color">#FEF6F4</color>
+    <color name="back_ground_color_1">#1AE71E2E</color>
+    <color name="color_status_svbv">#40888888</color>
 </resources>

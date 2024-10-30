@@ -55,9 +55,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@color/back_ground_color"
-
+        app:labelVisibilityMode="labeled"
         app:menu="@menu/menu_bottom_navigation_trangchu"
-            style="@style/Widget.MaterialComponents.BottomNavigationView.PrimarySurface"
+        style="@style/Widget.MaterialComponents.BottomNavigationView.PrimarySurface"
         app:itemTextColor="@color/bottom_navigation_color_trangchu"
         app:itemIconTint="@color/bottom_navigation_color_trangchu"
 
