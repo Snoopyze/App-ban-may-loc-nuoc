@@ -13,7 +13,10 @@
         android:theme="@style/Theme.MTC"
         tools:targetApi="31">
         <activity
-            android:name=".XinChao"
+            android:name=".sp_nc_LienHe"
+            android:exported="false" />
+        <activity
+            android:name=".TrangChu"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,7 +24,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity android:name=".sp_SanPham"></activity>
 
     </application>
 

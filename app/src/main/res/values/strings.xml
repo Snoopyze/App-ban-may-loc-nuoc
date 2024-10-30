@@ -5,4 +5,11 @@
     <string name="tai_khoan">Tài khoản</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sp_sanpham">Sản Phẩm</string>
+    <string name="sp_donhang">Đơn hàng</string>
+    <string name="sp_nhucau">Nhu cầu</string>
+    <string name="sp_yeuthich">Yêu thích</string>
+    <string name="donhang">Đơn Hàng</string>
+    <string name="timkiem">Tìm Kiếm</string>
+    <string name="yeu_thich">Yêu thích</string>
 </resources>

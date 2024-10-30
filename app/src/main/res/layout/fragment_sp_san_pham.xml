@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".sp_SanPhamFragment"
+    android:contentDescription=" "
+    android:id="@+id/fragment_sp_san_pham">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/sp_view_pager_qc"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:contentDescription=" "
+
+                />
+            <me.relex.circleindicator.CircleIndicator
+                android:id="@+id/sp_circleindicator_center"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                app:ci_drawable="@drawable/bg_indicatior"/>
+            <LinearLayout
+                android:id="@+id/lnheader_sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <ImageView
+                    android:id="@+id/btntrangchu_sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:src="@drawable/icon_trangchu"
+                    app:tint="@color/primary_color"
+                    android:layout_gravity="center"/>
+                <EditText
+                    android:layout_width="270dp"
+                    android:layout_height="40dp"
+                    android:padding="10dp"
+                    android:hint="Tìm kiếm"
+                    android:background="@drawable/edit_text_rounded_coner"
+                    android:layout_margin="10dp"
+                    android:drawableEnd="@drawable/icon_lookup"
+                    />
+                <ImageView
+                    android:id="@+id/btngiohang_sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:src="@drawable/icon_giohang_m"
+                    app:tint="@color/primary_color"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/sp_sanpham_tablayout"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+
+                android:layout_marginTop="10dp"
+                android:contentDescription=" "
+                app:tabMode="scrollable"
+                app:tabIconTint="@null"
+                >
+
+            </com.google.android.material.tabs.TabLayout>
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/sp_sanpham_viewpager2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+
+
+        </LinearLayout>
+
+
+</FrameLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/back_ground_color"
+    tools:context=".sp_SanPham">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/sp_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/back_ground_color"
+        android:layout_above="@+id/sp_view_outline"
+        android:contentDescription=" " />
+
+    <View
+        android:id="@+id/sp_view_outline"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/sp_bottom_navigation"
+        android:layout_marginBottom="0dp"
+        android:background="@color/bottom_nav_default_color"
+        />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/sp_bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/back_ground_color"
+
+        app:menu="@menu/menu_bottom_navigation_sp_sanpham"
+        style="@style/Widget.MaterialComponents.BottomNavigationView.PrimarySurface"
+        app:itemTextColor="@color/bottom_navigation_color_trangchu"
+        app:itemIconTint="@color/bottom_navigation_color_trangchu"
+        app:labelVisibilityMode="labeled"
+        />
+
+</RelativeLayout>
