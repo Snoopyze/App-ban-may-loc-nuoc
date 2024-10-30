@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/primary_color"
+    tools:context=".QuenMatKhau2">
+
+    <RelativeLayout
+        android:id="@+id/headerSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="16dp"
+        android:layout_marginBottom="40dp">
+
+        <ImageView
+            android:id="@+id/icBackQMK2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="35dp"
+            android:rotation="180"
+            android:src="@drawable/icon_next_c"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/loginHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:text="Xác nhận số điện thoại"
+            android:textColor="#FFFFFF"
+            android:textSize="25dp" />
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/mainSection"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/headerSection"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="@color/beige">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/countDownTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mã xác thực (OTP) có hiệu lực trong 120s đã được gửi đến SMS của số"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/phoneNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0387211584"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:layout_marginBottom="16dp"
+                android:gravity="center"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="16dp">
+
+                <EditText
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_margin="4dp"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:background="@drawable/rounded_corners_c"
+                    android:textSize="20sp"
+                    android:maxLength="1"/>
+
+                <EditText
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_margin="4dp"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:background="@drawable/rounded_corners_c"
+                    android:textSize="20sp"
+                    android:maxLength="1"/>
+
+                <EditText
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_margin="4dp"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:background="@drawable/rounded_corners_c"
+                    android:textSize="20sp"
+                    android:maxLength="1"/>
+
+                <EditText
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_margin="4dp"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:background="@drawable/rounded_corners_c"
+                    android:textSize="20sp"
+                    android:maxLength="1"/>
+
+                <EditText
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_margin="4dp"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:background="@drawable/rounded_corners_c"
+                    android:textSize="20sp"
+                    android:maxLength="1"/>
+
+                <EditText
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_margin="4dp"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:background="@drawable/rounded_corners_c"
+                    android:textSize="20sp"
+                    android:maxLength="1"/>
+            </LinearLayout>
+            <Button
+                android:id="@+id/contBtnQMK"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tiếp tục"
+                android:background="@drawable/rounded_corners_button_c"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:padding="16dp"
+                app:backgroundTint="@null"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bạn chưa nhận được mã ?"
+                    android:textColor="#757575"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/resendCodeTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" Gửi lại mã"
+                    android:textColor="#E60000"
+                    android:textSize="16sp"
+                    android:layout_marginStart="4dp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
