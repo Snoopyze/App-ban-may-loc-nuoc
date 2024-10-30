@@ -24,9 +24,7 @@
         <activity
             android:name=".QuenMatKhau"
             android:exported="false" />
-        <activity
-            android:name=".QuenMatKha"
-            android:exported="false" />
+
         <activity
             android:name=".DangKi3"
             android:exported="false" />
@@ -36,9 +34,11 @@
         <activity
             android:name=".DangKi"
             android:exported="false" />
-        <activity
-            android:name=".DangNhapFragment"
-            android:exported="false" />
+        <activity android:name=".TrangChu"/>
+        <activity android:name=".sp_nc_LienHe"/>
+        <activity android:name=".sp_SanPham"/>
+
+
 
         <activity
             android:name=".XinChao"
