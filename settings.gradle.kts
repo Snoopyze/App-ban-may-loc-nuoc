@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "MTC"
 include(":app")
- 
+include(":mylibrary")
