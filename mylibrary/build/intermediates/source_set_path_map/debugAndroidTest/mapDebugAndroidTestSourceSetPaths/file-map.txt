@@ -1,0 +1,8 @@
+com.example.mylibrary.test.mylibrary-appcompat-v7-28.0.0-0 C:\Users\ASUS\.gradle\caches\transforms-4\ac7bcaa6ceea9515165b95ae223a42bc\transformed\appcompat-v7-28.0.0\res
+com.example.mylibrary.test.mylibrary-support-compat-28.0.0-1 C:\Users\ASUS\.gradle\caches\transforms-4\acb2a9c3e8acef9f3c5c542d45c3e52e\transformed\support-compat-28.0.0\res
+com.example.mylibrary.test.mylibrary-coordinatorlayout-28.0.0-2 C:\Users\ASUS\.gradle\caches\transforms-4\adc9f2f3eeaa9f14d11a950941c7b5d7\transformed\coordinatorlayout-28.0.0\res
+com.example.mylibrary.test.mylibrary-androidTest-3 C:\Users\ASUS\AndroidStudioProjects\App-ban-may-loc-nuoc\mylibrary\build\generated\res\resValues\androidTest\debug
+com.example.mylibrary.test.mylibrary-mergeDebugAndroidTestResources-4 C:\Users\ASUS\AndroidStudioProjects\App-ban-may-loc-nuoc\mylibrary\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.example.mylibrary.test.mylibrary-mergeDebugAndroidTestResources-5 C:\Users\ASUS\AndroidStudioProjects\App-ban-may-loc-nuoc\mylibrary\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.example.mylibrary.test.mylibrary-debugAndroidTest-6 C:\Users\ASUS\AndroidStudioProjects\App-ban-may-loc-nuoc\mylibrary\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources
+com.example.mylibrary.test.mylibrary-debug-7 C:\Users\ASUS\AndroidStudioProjects\App-ban-may-loc-nuoc\mylibrary\build\intermediates\packaged_res\debug\packageDebugResources
