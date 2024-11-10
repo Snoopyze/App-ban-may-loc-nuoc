@@ -24,16 +24,17 @@
             android:gravity="center"
             android:layout_marginTop="50dp"/>
         <com.google.android.material.tabs.TabLayout
-            android:id="@+id/sp_yt_tablayout"
+            android:id="@+id/sp_yt_tablayout_sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:contentDescription=" "
+            android:background="@color/white"
             app:tabSelectedTextColor="@color/primary_color"
             app:tabIndicatorColor="@color/primary_color"
             />
         <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/sp_yt_viewpager2"
+            android:id="@+id/sp_yt_viewpager2_sp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
 

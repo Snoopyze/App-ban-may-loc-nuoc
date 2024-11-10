@@ -6,7 +6,6 @@ public class SanPhamCategory {
     private String nameCategory;
 
 
-
     private List<SanPham> list;
 
     public SanPhamCategory(String nameCategory, List<SanPham> list) {

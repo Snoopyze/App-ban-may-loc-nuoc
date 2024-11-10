@@ -1,13 +1,24 @@
 package com.example.mtc;
 
-public class SanPham {
-    private int resourceID;
-    private String tittle, price;
+import java.io.Serializable;
 
-    public SanPham(int resourceID, String tittle, String price) {
+public class SanPham implements Serializable {
+    private int resourceID;
+    private String tittle, price, content;
+
+    public SanPham(int resourceID, String tittle, String price, String content) {
         this.resourceID = resourceID;
         this.tittle = tittle;
         this.price = price;
+        this.content = content;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
     }
 
     public int getResourceID() {

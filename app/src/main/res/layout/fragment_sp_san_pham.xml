@@ -63,7 +63,7 @@
                 android:id="@+id/sp_sanpham_tablayout"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-
+                android:background="@color/white"
                 android:layout_marginTop="10dp"
                 android:contentDescription=" "
                 app:tabMode="scrollable"
