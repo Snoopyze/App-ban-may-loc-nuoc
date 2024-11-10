@@ -86,41 +86,48 @@ public class sp_sp_AOsmithFragment extends Fragment {
 
     private List<SanPhamCategory> getListSanPhamCategory() {
         List<SanPhamCategory> listSanPhamCategory = new ArrayList<>();
+        String content = "Loại máy: Máy lọc nước dạng đứng\n"
+                + "Số lõi lọc: 4 lõi\n"
+                + "Dung tích bình chứa: 5 lít\n"
+                + "Tỷ lệ lọc thải: Lọc 5 thải 5\n"
+                + "Công suất tiêu thụ điện trung bình: 0.048 kW/h\n"
+                ;
+
 
         List<SanPham> listSanPhamAOSmith_1 = new ArrayList<>();
-        listSanPhamAOSmith_1.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 01", "5.140.000.đ"));
-        listSanPhamAOSmith_1.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 02", "5.140.000.đ"));
-        listSanPhamAOSmith_1.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 03", "5.140.000.đ"));
-        listSanPhamAOSmith_1.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 04", "5.140.000.đ"));
-        listSanPhamAOSmith_1.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 05", "5.140.000.đ"));
+        listSanPhamAOSmith_1.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 01", "5.140.000.đ", content));
+        listSanPhamAOSmith_1.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 02", "5.140.000.đ", content));
+        listSanPhamAOSmith_1.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 03", "5.140.000.đ", content));
+        listSanPhamAOSmith_1.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 04", "5.140.000.đ", content));
+        listSanPhamAOSmith_1.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 05", "5.140.000.đ", content));
 
         List<SanPham> listSanPhamAOSmith_2 = new ArrayList<>();
-        listSanPhamAOSmith_2.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 01", "5.140.000.đ"));
-        listSanPhamAOSmith_2.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 02", "5.140.000.đ"));
-        listSanPhamAOSmith_2.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 03", "5.140.000.đ"));
-        listSanPhamAOSmith_2.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 04", "5.140.000.đ"));
-        listSanPhamAOSmith_2.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 05", "5.140.000.đ"));
+        listSanPhamAOSmith_2.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 01", "5.140.000.đ", content));
+        listSanPhamAOSmith_2.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 02", "5.140.000.đ", content));
+        listSanPhamAOSmith_2.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 03", "5.140.000.đ", content));
+        listSanPhamAOSmith_2.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 04", "5.140.000.đ", content));
+        listSanPhamAOSmith_2.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 05", "5.140.000.đ", content));
 
         List<SanPham> listSanPhamAOSmith_3 = new ArrayList<>();
-        listSanPhamAOSmith_3.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 01", "5.140.000.đ"));
-        listSanPhamAOSmith_3.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 02", "5.140.000.đ"));
-        listSanPhamAOSmith_3.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 03", "5.140.000.đ"));
-        listSanPhamAOSmith_3.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 04", "5.140.000.đ"));
-        listSanPhamAOSmith_3.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 05", "5.140.000.đ"));
+        listSanPhamAOSmith_3.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 01", "5.140.000.đ", content));
+        listSanPhamAOSmith_3.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 02", "5.140.000.đ", content));
+        listSanPhamAOSmith_3.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 03", "5.140.000.đ", content));
+        listSanPhamAOSmith_3.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 04", "5.140.000.đ", content));
+        listSanPhamAOSmith_3.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 05", "5.140.000.đ", content));
 
         List<SanPham> listSanPhamAOSmith_4 = new ArrayList<>();
-        listSanPhamAOSmith_4.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 01", "5.140.000.đ"));
-        listSanPhamAOSmith_4.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 02", "5.140.000.đ"));
-        listSanPhamAOSmith_4.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 03", "5.140.000.đ"));
-        listSanPhamAOSmith_4.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 04", "5.140.000.đ"));
-        listSanPhamAOSmith_4.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 05", "5.140.000.đ"));
+        listSanPhamAOSmith_4.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 01", "5.140.000.đ", content));
+        listSanPhamAOSmith_4.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 02", "5.140.000.đ", content));
+        listSanPhamAOSmith_4.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 03", "5.140.000.đ", content));
+        listSanPhamAOSmith_4.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 04", "5.140.000.đ", content));
+        listSanPhamAOSmith_4.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 05", "5.140.000.đ", content));
 
         List<SanPham> listSanPhamAOSmith_5 = new ArrayList<>();
-        listSanPhamAOSmith_5.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 01", "5.140.000.đ"));
-        listSanPhamAOSmith_5.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 02", "5.140.000.đ"));
-        listSanPhamAOSmith_5.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 03", "5.140.000.đ"));
-        listSanPhamAOSmith_5.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 04", "5.140.000.đ"));
-        listSanPhamAOSmith_5.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 05", "5.140.000.đ"));
+        listSanPhamAOSmith_5.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 01", "5.140.000.đ", content));
+        listSanPhamAOSmith_5.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 02", "5.140.000.đ", content));
+        listSanPhamAOSmith_5.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 03", "5.140.000.đ", content));
+        listSanPhamAOSmith_5.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 04", "5.140.000.đ", content));
+        listSanPhamAOSmith_5.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 05", "5.140.000.đ", content));
 
 
 

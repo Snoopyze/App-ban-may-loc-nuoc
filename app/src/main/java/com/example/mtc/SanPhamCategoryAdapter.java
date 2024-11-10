@@ -1,5 +1,7 @@
 package com.example.mtc;
 
+import static androidx.core.content.ContentProviderCompat.requireContext;
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,13 +12,21 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SanPhamCategoryAdapter extends RecyclerView.Adapter<SanPhamCategoryAdapter.SanPhamCategoryViewHolder> {
 
     private Context mContext;
     private List<SanPhamCategory> mlistSanPhamCategory;
+    private SanPhamAdapter sanPhamAdapter;
 
+
+//    public SanPhamCategoryAdapter(List<SanPhamCategory> mlistSanPhamCategory) {
+//
+//        this.mlistSanPhamCategory = mlistSanPhamCategory;
+//    }
+//
     public SanPhamCategoryAdapter(Context mContext) {
         this.mContext = mContext;
     }
@@ -50,10 +60,19 @@ public class SanPhamCategoryAdapter extends RecyclerView.Adapter<SanPhamCategory
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mContext, RecyclerView.HORIZONTAL, false);
         holder.rcvSanPham.setLayoutManager((linearLayoutManager));
 
-        SanPhamAdapter sanPhamAdapter = new SanPhamAdapter();
+        sanPhamAdapter = new SanPhamAdapter(    mContext, getListItemSanPham());
+        sanPhamAdapter.setData(getListItemSanPham());
+
+        SanPhamAdapter sanPhamAdapter = new SanPhamAdapter(mContext, getListItemSanPham());
         sanPhamAdapter.setData(sanPhamCategory.getList());
 
         holder.rcvSanPham.setAdapter(sanPhamAdapter);
+
+    }
+
+    private List<SanPham> getListItemSanPham() {
+        List<SanPham> list = new ArrayList<>();
+        return list;
 
     }
 

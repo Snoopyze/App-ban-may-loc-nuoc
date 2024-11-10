@@ -69,10 +69,10 @@ public class sp_YeuThichFragment extends Fragment {
         // Inflate the layout for this fragment
         View  view =  inflater.inflate(R.layout.fragment_sp_yeu_thich, container, false);
 
-        viewPager2 = view.findViewById(R.id.sp_yt_viewpager2);
+        viewPager2 = view.findViewById(R.id.sp_yt_viewpager2_sp);
         viewPager2.setAdapter(new sp_yt_ViewPagerAdapter(this));
 
-        tabLayout = view.findViewById(R.id.sp_yt_tablayout);
+        tabLayout = view.findViewById(R.id.sp_yt_tablayout_sp);
         TabLayoutMediator tabLayoutMediator = new TabLayoutMediator(
                 tabLayout, viewPager2, new TabLayoutMediator.TabConfigurationStrategy() {
             @Override

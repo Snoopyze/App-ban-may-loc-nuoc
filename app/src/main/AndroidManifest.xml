@@ -13,6 +13,9 @@
         android:theme="@style/Theme.MTC"
         tools:targetApi="31">
         <activity
+            android:name=".DetailSanPhamActivity"
+            android:exported="false" />
+        <activity
             android:name=".DangNhap"
             android:exported="false" />
         <activity
@@ -24,7 +27,6 @@
         <activity
             android:name=".QuenMatKhau"
             android:exported="false" />
-
         <activity
             android:name=".DangKi3"
             android:exported="false" />
@@ -34,12 +36,8 @@
         <activity
             android:name=".DangKi"
             android:exported="false" />
-        <activity android:name=".TrangChu"/>
-        <activity android:name=".sp_nc_LienHe"/>
-        <activity android:name=".sp_SanPham"/>
-
-
-
+        <activity android:name=".TrangChu" /> <!-- <activity android:name=".sp_nc_LienHe"/> -->
+        <activity android:name=".sp_SanPham" />
         <activity
             android:name=".XinChao"
             android:exported="true">
@@ -49,7 +47,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

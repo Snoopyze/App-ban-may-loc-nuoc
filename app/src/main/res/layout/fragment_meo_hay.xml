@@ -3,12 +3,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MeoHayFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/meo_hay"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_marginTop="50dp"/>
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/sp_yt_tablayout_mh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:contentDescription=" "
+            android:background="@color/white"
+            app:tabSelectedTextColor="@color/primary_color"
+            app:tabIndicatorColor="@color/primary_color"
+            />
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/sp_yt_viewpager2_mh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            />
+
+    </LinearLayout>
 
 </FrameLayout>

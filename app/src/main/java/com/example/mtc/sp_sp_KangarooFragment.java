@@ -85,41 +85,48 @@ public class sp_sp_KangarooFragment extends Fragment {
     private List<SanPhamCategory> getListSanPhamCategory() {
 
         List<SanPhamCategory> listSanPhamCategory = new ArrayList<>();
+        String content = "Loại máy: Máy lọc nước dạng đứng\n"
+                + "Số lõi lọc: 4 lõi\n"
+                + "Dung tích bình chứa: 5 lít\n"
+                + "Tỷ lệ lọc thải: Lọc 5 thải 5\n"
+                + "Công suất tiêu thụ điện trung bình: 0.048 kW/h\n"
+                ;
+
 
         List<SanPham> listSanPhamKangaroo_1 = new ArrayList<>();
-        listSanPhamKangaroo_1.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 01", "5.140.000.đ"));
-        listSanPhamKangaroo_1.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 02", "5.140.000.đ"));
-        listSanPhamKangaroo_1.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 03", "5.140.000.đ"));
-        listSanPhamKangaroo_1.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 04", "5.140.000.đ"));
-        listSanPhamKangaroo_1.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 05", "5.140.000.đ"));
+        listSanPhamKangaroo_1.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 01", "5.140.000.đ",content));
+        listSanPhamKangaroo_1.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 02", "5.140.000.đ",content));
+        listSanPhamKangaroo_1.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 03", "5.140.000.đ",content));
+        listSanPhamKangaroo_1.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 04", "5.140.000.đ",content));
+        listSanPhamKangaroo_1.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 05", "5.140.000.đ",content));
 
         List<SanPham> listSanPhamKangaroo_2 = new ArrayList<>();
-        listSanPhamKangaroo_2.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 01", "5.140.000.đ"));
-        listSanPhamKangaroo_2.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 02", "5.140.000.đ"));
-        listSanPhamKangaroo_2.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 03", "5.140.000.đ"));
-        listSanPhamKangaroo_2.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 04", "5.140.000.đ"));
-        listSanPhamKangaroo_2.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 05", "5.140.000.đ"));
+        listSanPhamKangaroo_2.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 01", "5.140.000.đ",content));
+        listSanPhamKangaroo_2.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 02", "5.140.000.đ",content));
+        listSanPhamKangaroo_2.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 03", "5.140.000.đ",content));
+        listSanPhamKangaroo_2.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 04", "5.140.000.đ",content));
+        listSanPhamKangaroo_2.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 05", "5.140.000.đ",content));
 
         List<SanPham> listSanPhamKangaroo_3 = new ArrayList<>();
-        listSanPhamKangaroo_3.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 01", "5.140.000.đ"));
-        listSanPhamKangaroo_3.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 02", "5.140.000.đ"));
-        listSanPhamKangaroo_3.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 03", "5.140.000.đ"));
-        listSanPhamKangaroo_3.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 04", "5.140.000.đ"));
-        listSanPhamKangaroo_3.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 05", "5.140.000.đ"));
+        listSanPhamKangaroo_3.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 01", "5.140.000.đ",content));
+        listSanPhamKangaroo_3.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 02", "5.140.000.đ",content));
+        listSanPhamKangaroo_3.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 03", "5.140.000.đ",content));
+        listSanPhamKangaroo_3.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 04", "5.140.000.đ",content));
+        listSanPhamKangaroo_3.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 05", "5.140.000.đ",content));
 
         List<SanPham> listSanPhamKangaroo_4 = new ArrayList<>();
-        listSanPhamKangaroo_4.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 01", "5.140.000.đ"));
-        listSanPhamKangaroo_4.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 02", "5.140.000.đ"));
-        listSanPhamKangaroo_4.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 03", "5.140.000.đ"));
-        listSanPhamKangaroo_4.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 04", "5.140.000.đ"));
-        listSanPhamKangaroo_4.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 05", "5.140.000.đ"));
+        listSanPhamKangaroo_4.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 01", "5.140.000.đ",content));
+        listSanPhamKangaroo_4.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 02", "5.140.000.đ",content));
+        listSanPhamKangaroo_4.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 03", "5.140.000.đ",content));
+        listSanPhamKangaroo_4.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 04", "5.140.000.đ",content));
+        listSanPhamKangaroo_4.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 05", "5.140.000.đ",content));
 
         List<SanPham> listSanPhamKangaroo_5 = new ArrayList<>();
-        listSanPhamKangaroo_5.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 01", "5.140.000.đ"));
-        listSanPhamKangaroo_5.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 02", "5.140.000.đ"));
-        listSanPhamKangaroo_5.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 03", "5.140.000.đ"));
-        listSanPhamKangaroo_5.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 04", "5.140.000.đ"));
-        listSanPhamKangaroo_5.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 05", "5.140.000.đ"));
+        listSanPhamKangaroo_5.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 01", "5.140.000.đ",content));
+        listSanPhamKangaroo_5.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 02", "5.140.000.đ",content));
+        listSanPhamKangaroo_5.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 03", "5.140.000.đ",content));
+        listSanPhamKangaroo_5.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 04", "5.140.000.đ",content));
+        listSanPhamKangaroo_5.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 05", "5.140.000.đ",content));
 
 
         listSanPhamCategory.add(new SanPhamCategory("Máy lọc nước Kangarro 01",listSanPhamKangaroo_1));
