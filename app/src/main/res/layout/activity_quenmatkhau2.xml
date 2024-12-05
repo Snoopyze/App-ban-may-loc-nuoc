@@ -63,7 +63,7 @@
                 android:layout_marginBottom="8dp"/>
 
             <TextView
-                android:id="@+id/phoneNumber"
+                android:id="@+id/phoneNumberTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0387211584"
@@ -81,6 +81,7 @@
                 android:layout_marginBottom="16dp">
 
                 <EditText
+                    android:id="@+id/otp1QMK"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:layout_margin="4dp"
@@ -91,6 +92,7 @@
                     android:maxLength="1"/>
 
                 <EditText
+                    android:id="@+id/otp2QMK"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:layout_margin="4dp"
@@ -101,6 +103,7 @@
                     android:maxLength="1"/>
 
                 <EditText
+                    android:id="@+id/otp3QMK"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:layout_margin="4dp"
@@ -111,6 +114,7 @@
                     android:maxLength="1"/>
 
                 <EditText
+                    android:id="@+id/otp4QMK"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:layout_margin="4dp"
@@ -121,6 +125,7 @@
                     android:maxLength="1"/>
 
                 <EditText
+                    android:id="@+id/otp5QMK"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:layout_margin="4dp"
@@ -131,6 +136,7 @@
                     android:maxLength="1"/>
 
                 <EditText
+                    android:id="@+id/otp6QMK"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:layout_margin="4dp"

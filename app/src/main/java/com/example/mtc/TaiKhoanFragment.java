@@ -1,5 +1,6 @@
 package com.example.mtc;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -46,6 +48,8 @@ public class TaiKhoanFragment extends Fragment {
         return fragment;
     }
 
+    private TextView infoSV;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +63,15 @@ public class TaiKhoanFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tai_khoan, container, false);
+        View view = inflater.inflate(R.layout.fragment_tai_khoan, container, false);
+
+        infoSV = view.findViewById(R.id.welcomeText);
+
+        infoSV.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), ThongTinSinhVien.class);
+            startActivity(intent);
+        });
+
+        return view;
     }
 }

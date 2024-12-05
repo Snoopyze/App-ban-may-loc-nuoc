@@ -2,100 +2,236 @@ package com.example.mtc;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.CountDownTimer;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+
+import com.google.firebase.FirebaseException;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.PhoneAuthCredential;
+import com.google.firebase.auth.PhoneAuthOptions;
+import com.google.firebase.auth.PhoneAuthProvider;
+
+import java.util.Timer;
+import java.util.TimerTask;
+import java.util.concurrent.TimeUnit;
+
 
 public class DangKi2 extends AppCompatActivity {
 
-    private TextView countDownTxt, resendCodeTxt;
-    private CountDownTimer countDownTimer;
+    private String phoneNumber;
+    private FirebaseAuth mAuth;
+    private String verificationCode;
+    private PhoneAuthProvider.ForceResendingToken resendingToken;
+
+    private long timeOutSeconds = 60L;
+
     private ImageView backBtn;
-    private static final int OTP_VALID_DURATION = 120000;
+    private EditText otp1, otp2, otp3, otp4, otp5, otp6;
+    private TextView countdownTxt,resendCodeDKTxt,phoneNumberTextView;
+    private Button contBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dangki2);
 
+        verificationCode = getIntent().getStringExtra("OTP");
+        phoneNumber = getIntent().getStringExtra("phoneNumber");
+        resendingToken = getIntent().getParcelableExtra("resendToken");
+
+        otp1 = findViewById(R.id.otp1);
+        otp2 = findViewById(R.id.otp2);
+        otp3 = findViewById(R.id.otp3);
+        otp4 = findViewById(R.id.otp4);
+        otp5 = findViewById(R.id.otp5);
+        otp6 = findViewById(R.id.otp6);
+
         backBtn = findViewById(R.id.icBackDK2);
-        countDownTxt = findViewById(R.id.countDownTxt);
-        resendCodeTxt = findViewById(R.id.resendCodeTxt);
-        Button contBtn = findViewById(R.id.contBtn);
+        phoneNumberTextView = findViewById(R.id.phoneNumber);
+        countdownTxt = findViewById(R.id.countDownTxt);
+        contBtn = findViewById(R.id.contBtn);
+        resendCodeDKTxt = findViewById(R.id.resendCodeTxt);
+        mAuth = FirebaseAuth.getInstance();
 
-        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(DangKi2.this, DangKi.class);
-                startActivity(intent);
-            }
+
+        backBtn.setOnClickListener(view ->  {
+            Intent intent = new Intent(DangKi2.this, DangKi.class);
+            startActivity(intent);
         });
-        String phoneNumber = getIntent().getStringExtra("PHONE_NUMBER");
 
-        // Hiển thị số điện thoại
-        TextView phoneNumberTextView = findViewById(R.id.phoneNumber);
         if (phoneNumber != null) {
             phoneNumberTextView.setText(phoneNumber);
         }
 
-        contBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        contBtn.setOnClickListener(v -> {
+            String otp = (otp1.getText().toString() + otp2.getText().toString() + otp3.getText().toString() +
+                    otp4.getText().toString() + otp5.getText().toString() + otp6.getText().toString());
 
-                String phoneNumber = getIntent().getStringExtra("PHONE_NUMBER");
-
-                Intent intent = new Intent(DangKi2.this, DangKi3.class);
-                intent.putExtra("PHONE_NUMBER", phoneNumber);
-                startActivity(intent);
+            if (otp.isEmpty()) {
+                Toast.makeText(DangKi2.this, "Vui lòng nhập mã OTP", Toast.LENGTH_SHORT).show();
+            }else {
+                if (otp.length() == 6){
+                    PhoneAuthCredential phoneAuthCredential = PhoneAuthProvider.getCredential(verificationCode, otp);
+                    signIn(phoneAuthCredential);
+                }else{
+                    Toast.makeText(DangKi2.this, "Vui lòng nhập đầy đủ mã OTP", Toast.LENGTH_SHORT).show();
+                }
             }
         });
-        // Bắt đầu đếm ngược
-        startCountdown();
 
-        // Sự kiện khi nhấn vào nút "Gửi lại mã"
-        resendCodeTxt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Khởi động lại đếm ngược khi gửi lại mã
-                startCountdown();
-                // Thực hiện gửi lại mã OTP
+        resendCodeDKTxt.setOnClickListener(view -> {
+            resendVerificationCode();
+        });
+
+    }
+
+    private void resendVerificationCode(){
+        startResendTimerDK();
+        PhoneAuthOptions.Builder builder =
+                PhoneAuthOptions.newBuilder(mAuth)
+                        .setPhoneNumber(phoneNumber)
+                        .setTimeout(timeOutSeconds,TimeUnit.SECONDS)
+                        .setActivity(this)
+                        .setCallbacks(new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+                            @Override
+                            public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
+                                signIn(phoneAuthCredential);
+                            }
+
+                            @Override
+                            public void onVerificationFailed(@NonNull FirebaseException e) {
+                                Toast.makeText(DangKi2.this, "Mã xác thực không đúng",Toast.LENGTH_SHORT).show();
+                            }
+
+                            @Override
+                            public void onCodeSent(@NonNull String code, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+                                super.onCodeSent(code, forceResendingToken);
+                                verificationCode = code;
+                                resendingToken = forceResendingToken;
+                                Toast.makeText(DangKi2.this, "Mã xác thực đã được gửi",Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .setForceResendingToken(resendingToken);
+            PhoneAuthProvider.verifyPhoneNumber(builder.build());
+    }
+
+    private void signIn(PhoneAuthCredential phoneAuthCredential){
+        mAuth.signInWithCredential(phoneAuthCredential).addOnCompleteListener(this, task -> {
+            if (task.isSuccessful()){
+                Intent intent = new Intent(DangKi2.this, DangKi3.class);
+                intent.putExtra("phoneNumber",phoneNumber);
+                startActivity(intent);
+                finish();
+            }else{
+                Toast.makeText(DangKi2.this, "Mã xác thực không đúng",Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-    private void startCountdown() {
-        if (countDownTimer != null) {
-            countDownTimer.cancel(); // Hủy bỏ đếm ngược cũ nếu có
+    private void startResendTimerDK() {
+        resendCodeDKTxt.setEnabled(false);
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                timeOutSeconds--;
+
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        countdownTxt.setText("Mã xác thực còn hiệu lực trong " + timeOutSeconds + " giây");
+                    }
+                });
+
+                if (timeOutSeconds <= 0) {
+                    timeOutSeconds = 60L;
+                    timer.cancel();
+
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            resendCodeDKTxt.setVisibility(View.VISIBLE);
+                            resendCodeDKTxt.setEnabled(true);
+                        }
+                    });
+                }
+            }
+        }, 0, 1000);
+    }
+
+    private void addTextChangeListener() {
+        otp1.addTextChangedListener(new EditTextWatcher(otp1));
+        otp2.addTextChangedListener(new EditTextWatcher(otp2));
+        otp3.addTextChangedListener(new EditTextWatcher(otp3));
+        otp4.addTextChangedListener(new EditTextWatcher(otp4));
+        otp5.addTextChangedListener(new EditTextWatcher(otp5));
+        otp6.addTextChangedListener(new EditTextWatcher(otp6));
+    }
+
+    private class EditTextWatcher implements TextWatcher {
+        private View v;
+
+        private EditTextWatcher(View v){
+            this.v = v;
         }
 
-        countDownTimer = new CountDownTimer(OTP_VALID_DURATION, 1000) {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-            public void onTick(long millisUntilFinished) {
-                // Cập nhật số giây còn lại vào TextView
-                long secondsRemaining = millisUntilFinished / 1000;
-                countDownTxt.setText("Mã xác thực (OTP) có hiệu lực trong " + secondsRemaining + "s đã được gửi đến SMS của số ");
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+            String text = s.toString();
+
+            if (v.getId() == R.id.otp1) {
+                if (text.length() == 1) {
+                    otp2.requestFocus(); // Move focus to otp2
+                }
+            } else if (v.getId() == R.id.otp2) {
+                if (text.length() == 1) {
+                    otp3.requestFocus(); // Move focus to otp3
+                } else if (text.isEmpty()) {
+                    otp1.requestFocus(); // If empty, move focus back to otp1
+                }
+            } else if (v.getId() == R.id.otp3) {
+                if (text.length() == 1) {
+                    otp4.requestFocus(); // Move focus to otp4
+                } else if (text.isEmpty()) {
+                    otp2.requestFocus(); // If empty, move focus back to otp2
+                }
+            } else if (v.getId() == R.id.otp4) {
+                if (text.length() == 1) {
+                    otp5.requestFocus(); // Move focus to otp5
+                } else if (text.isEmpty()) {
+                    otp3.requestFocus(); // If empty, move focus back to otp3
+                }
+            } else if (v.getId() == R.id.otp5) {
+                if (text.length() == 1) {
+                    otp6.requestFocus(); // Move focus to otp6
+                } else if (text.isEmpty()) {
+                    otp4.requestFocus(); // If empty, move focus back to otp4
+                }
+            } else if (v.getId() == R.id.otp6) {
+                if (text.isEmpty()) {
+                    otp5.requestFocus(); // If empty, move focus back to otp5
+                }
             }
-
-            public void onFinish() {
-                // Hành động khi kết thúc đếm ngược
-                countDownTxt.setText("Mã xác thực đã hết hiệu lực.");
-            }
-        }.start();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        if (countDownTimer != null) {
-            countDownTimer.cancel();
         }
     }
 }

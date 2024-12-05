@@ -9,9 +9,13 @@ import android.widget.ImageView;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class XinChao extends AppCompatActivity {
 
     private ImageView icLogIn;
+    private FirebaseAuth mAuth;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -19,17 +23,17 @@ public class XinChao extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_xinchao);
 
+        mAuth = FirebaseAuth.getInstance();
+        icLogIn = findViewById(R.id.icLogIn);
 
-        ImageView imgLogin = findViewById(R.id.icLogIn);
-
-        imgLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(XinChao.this, DangNhap.class);
-                startActivity(intent);
-            }
+        icLogIn.setOnClickListener(view -> {
+            Intent intent = new Intent(XinChao.this, DangNhap.class);
+            startActivity(intent);
         });
+    }
 
+    public void onStart() {
+        super.onStart();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
     }
 }

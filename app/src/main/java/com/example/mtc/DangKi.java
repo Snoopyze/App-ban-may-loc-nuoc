@@ -2,24 +2,41 @@ package com.example.mtc;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.telephony.PhoneNumberFormattingTextWatcher;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+import com.google.firebase.FirebaseException;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.PhoneAuthCredential;
+import com.google.firebase.auth.PhoneAuthOptions;
+import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.hbb20.CountryCodePicker;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 public class DangKi extends AppCompatActivity {
 
-    private EditText phoneNumberETxt;
-    private Button signUpBtn;
     private TextView loginTxt;
     private ImageView backBtn;
+    private EditText phoneNumberETxt;
+    private Button sendCodeBtn;
+    private CountryCodePicker ccp;
+
+    private String phoneNumber;
+    private FirebaseAuth mAuth;
+    private String verificationCode;
+    private PhoneAuthProvider.ForceResendingToken token;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,36 +45,61 @@ public class DangKi extends AppCompatActivity {
         setContentView(R.layout.activity_dangki);
 
         backBtn = findViewById(R.id.icBackDK);
-        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(DangKi.this, DangNhap.class);
-                startActivity(intent);
-            }
-        });
-
-        phoneNumberETxt = findViewById(R.id.phoneNumber);
-
-        signUpBtn = findViewById(R.id.signupBtn);
-        signUpBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Lấy số điện thoại người dùng nhập
-                String phoneNumber = phoneNumberETxt.getText().toString();
-
-                Intent intent = new Intent(DangKi.this, DangKi2.class);
-                intent.putExtra("PHONE_NUMBER", phoneNumber);
-                startActivity(intent);
-            }
-        });
-
         loginTxt = findViewById(R.id.logInTxt);
-        loginTxt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        ccp = findViewById(R.id.cpp);
+        phoneNumberETxt = findViewById(R.id.phoneNumberEdt);
+        sendCodeBtn = findViewById(R.id.btnSendCode);
+        mAuth = FirebaseAuth.getInstance();
 
-                Intent intent = new Intent(DangKi.this, DangNhap.class);
-                startActivity(intent);
+        ccp.registerCarrierNumberEditText(phoneNumberETxt);
+
+        Map<String, String> data = new HashMap<>();
+        FirebaseFirestore.getInstance().collection("test").add(data);
+
+        backBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(DangKi.this, DangNhap.class);
+            startActivity(intent);
+        });
+
+        loginTxt.setOnClickListener(v -> {
+            Intent intent = new Intent(DangKi.this, DangNhap.class);
+            startActivity(intent);
+        });
+
+        sendCodeBtn.setOnClickListener(v -> {
+            phoneNumber = phoneNumberETxt.getText().toString().trim();
+
+            if (phoneNumber.isEmpty()) {
+                Toast.makeText(this, "Vui lòng nhập số điện thoại", Toast.LENGTH_SHORT).show();
+            }else {
+                PhoneAuthOptions.Builder builder =
+                        PhoneAuthOptions.newBuilder(mAuth)
+                                .setPhoneNumber(phoneNumber)
+                                .setTimeout(60L, TimeUnit.SECONDS)
+                                .setActivity(this)
+                                .setCallbacks(new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+                                    @Override
+                                    public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
+                                    }
+
+                                    @Override
+                                    public void onVerificationFailed(@NonNull FirebaseException e) {
+                                    }
+
+                                    @Override
+                                    public void onCodeSent(@NonNull String vcode, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+                                        super.onCodeSent(vcode, forceResendingToken);
+                                        verificationCode = vcode;
+                                        token = forceResendingToken;
+
+                                        Intent intent = new Intent(DangKi.this,DangKi2.class);
+                                        intent.putExtra("OTP" , verificationCode);
+                                        intent.putExtra("resendToken" , token);
+                                        intent.putExtra("phoneNumber" , phoneNumber);
+                                        startActivity(intent);
+                                    }
+                                });
+                PhoneAuthProvider.verifyPhoneNumber(builder.build());
             }
         });
     }

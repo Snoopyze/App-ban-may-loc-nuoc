@@ -20,50 +20,34 @@ public class DangNhap extends AppCompatActivity {
     private ImageView backBtn;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_dangnhap);
 
         backBtn = findViewById(R.id.icBack);
-        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(DangNhap.this, XinChao.class);
-                startActivity(intent);
-            }
-        });
-
-        forgotPWTxt = findViewById(R.id.forgotPassword);
-        forgotPWTxt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(DangNhap.this, QuenMatKhau.class);
-                startActivity(intent);
-            }
-        });
-
         loginBtn = findViewById(R.id.loginButton);
-        loginBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent = new Intent(DangNhap.this, TrangChu.class);
-                startActivity(intent);
-
-//                Intent intent = new Intent(DangNhap.this, TrangChu.class);
-//                startActivity(intent);
-            }
-        });
+        forgotPWTxt = findViewById(R.id.forgotPassword);
         signupTxt = findViewById(R.id.singupTxt);
 
-        signupTxt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        backBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(DangNhap.this, XinChao.class);
+            startActivity(intent);
+        });
 
-                Intent intent = new Intent(DangNhap.this, DangKi.class);
-                startActivity(intent);
-            }
+        forgotPWTxt.setOnClickListener(view -> {
+            Intent intent = new Intent(DangNhap.this, QuenMatKhau.class);
+            startActivity(intent);
+        });
+
+        loginBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(DangNhap.this, TrangChu.class);
+            startActivity(intent);
+        });
+
+        signupTxt.setOnClickListener(view -> {
+            Intent intent = new Intent(DangNhap.this, DangKi.class);
+            startActivity(intent);
         });
     }
 }

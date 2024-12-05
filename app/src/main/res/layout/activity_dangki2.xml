@@ -56,7 +56,7 @@
                 android:id="@+id/countDownTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Mã xác thực (OTP) có hiệu lực trong 120s đã được gửi đến SMS của số"
+                android:text="Thời gian"
                 android:textColor="#000000"
                 android:textSize="20sp"
                 android:gravity="center"
@@ -66,7 +66,7 @@
                 android:id="@+id/phoneNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0387211584"
+                android:text="0000000000"
                 android:textStyle="bold"
                 android:textColor="#000000"
                 android:textSize="20sp"
@@ -81,6 +81,7 @@
                 android:layout_marginBottom="16dp">
 
                 <EditText
+                    android:id="@+id/otp1"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:layout_margin="4dp"
@@ -91,6 +92,7 @@
                     android:maxLength="1"/>
 
                 <EditText
+                    android:id="@+id/otp2"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:layout_margin="4dp"
@@ -101,6 +103,7 @@
                     android:maxLength="1"/>
 
                 <EditText
+                    android:id="@+id/otp3"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:layout_margin="4dp"
@@ -111,6 +114,7 @@
                     android:maxLength="1"/>
 
                 <EditText
+                    android:id="@+id/otp4"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:layout_margin="4dp"
@@ -121,6 +125,7 @@
                     android:maxLength="1"/>
 
                 <EditText
+                    android:id="@+id/otp5"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:layout_margin="4dp"
@@ -131,6 +136,7 @@
                     android:maxLength="1"/>
 
                 <EditText
+                    android:id="@+id/otp6"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:layout_margin="4dp"

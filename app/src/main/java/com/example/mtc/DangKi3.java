@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,33 +20,32 @@ public class DangKi3 extends AppCompatActivity {
     private Button signupBtn;
     private ImageView backBtn;
 
+    private String phoneNumber;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dangki3);
 
         backBtn = findViewById(R.id.icBackDK3);
-        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(DangKi3.this, DangKi2.class);
-                startActivity(intent);
-            }
-        });
         phoneNumberTxt = findViewById(R.id.phoneNumber);
+        signupBtn = findViewById(R.id.signupButton);
 
-        String phoneNumber = getIntent().getStringExtra("PHONE_NUMBER");
+        phoneNumber = getIntent().getStringExtra("phoneNumber");
+
+        backBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(DangKi3.this, DangKi2.class);
+            startActivity(intent);
+        });
+
         if (phoneNumber != null) {
             phoneNumberTxt.setText(phoneNumber);
         }
-        signupBtn = findViewById(R.id.signupButton);
-        signupBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-                Intent intent = new Intent(DangKi3.this, DangNhap.class);
-                startActivity(intent);
-            }
+        signupBtn.setOnClickListener(view -> {
+            Toast.makeText(DangKi3.this, "Đăng kí thành công",Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(DangKi3.this, DangNhap.class);
+            startActivity(intent);
         });
     }
 }
