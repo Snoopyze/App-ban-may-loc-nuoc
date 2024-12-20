@@ -107,9 +107,56 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:text="noi dung"
-
                 android:textSize="16sp" />
+            <LinearLayout
+                android:id="@+id/layout_count"
+                android:layout_width="80dp"
+                android:layout_height="20dp"
+                android:orientation="horizontal"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/bg_white_corner_3_border_gray">
 
+                <TextView
+                    android:id="@+id/tv_sub"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="-"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"/>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black"/>
+
+                <TextView
+                    android:id="@+id/tv_count"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="1"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"/>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black"/>
+
+                <TextView
+                    android:id="@+id/tv_add"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="+"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"/>
+            </LinearLayout>
         </LinearLayout>
 
     </ScrollView>
@@ -124,34 +171,62 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
-
         <LinearLayout
-            android:id="@+id/btn_detailSP_themvaogiohang"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_marginStart="10dp">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/icon_themvaogiohang_m"
-                app:tint="@color/bottom_nav_default_color" />
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="vertical">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Thêm vào giỏ hàng"
-                android:textColor="@color/bottom_nav_default_color"/>
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:text="Tổng tiền"/>
 
+            <TextView
+                android:id="@+id/tv_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:text="0vnd"/>
         </LinearLayout>
-        <Button
-            android:id="@+id/btn_detailSP_muangay"
-            android:layout_width="match_parent"
+<!--        <LinearLayout-->
+<!--            android:id="@+id/btn_detailSP_themvaogiohang"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical"-->
+<!--            android:gravity="center"-->
+<!--            android:layout_marginStart="10dp">-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:src="@drawable/icon_themvaogiohang_m"-->
+<!--                app:tint="@color/bottom_nav_default_color" />-->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Thêm vào giỏ hàng"-->
+<!--                android:textColor="@color/bottom_nav_default_color"/>-->
+
+<!--        </LinearLayout>-->
+
+        <TextView
+            android:id="@+id/btn_add_order"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="100dp"
             android:layout_marginEnd="10dp"
-            android:text="Mua ngay"/>
+            android:gravity="center"
+
+            android:background="@drawable/bg_main_corner_6"
+            android:textColor="@color/white"
+            android:text="Thêm vào giỏ hàng"/>
 
     </LinearLayout>
 

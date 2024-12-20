@@ -1,14 +1,23 @@
 package com.example.mtc;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,6 +72,52 @@ public class sp_sp_KangarooFragment extends Fragment {
     private RecyclerView rcvSanPhamCategory;
     private SanPhamCategoryAdapter sanPhamCategoryAdapter;
 
+    private DatabaseReference databaseReference;
+
+    private void fetchSanPhamCategoryFromFirebase() {
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @SuppressLint("NotifyDataSetChanged")
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                List<SanPhamCategory> listSanPhamCategory = new ArrayList<>();
+                for (DataSnapshot categorySnapshot : snapshot.getChildren()) {
+                    String nameCategory = categorySnapshot.child("nameCategory").getValue(String.class);
+                    List<SanPham> listSanPham = new ArrayList<>();
+
+                    for (DataSnapshot productSnapshot : categorySnapshot.child("list").getChildren()) {
+                        int resourceID = productSnapshot.child("resourceID").getValue(Integer.class);
+                        String title = productSnapshot.child("tittle").getValue(String.class);
+//
+                        String content = productSnapshot.child("content").getValue(String.class);
+//
+                        int price = productSnapshot.child("price").getValue(Integer.class);
+//
+                        String imgPath = productSnapshot.child("igmPath").getValue(String.class);
+
+
+//                        int resourceID = 1;
+//                        String title = "minh";
+//                        String content = "123";
+//                        int price = 5140000;
+//                        String imgPath = "https://aiosmart.com.vn/media/catalog/product/cache/24d0ad29ea4d0b7ccefb253965039c4f/m/_/m_y_l_c_n_c_empire_n_ng_ngu_i_-_10_c_p_l_c_model_epml038_1.jpg";
+                        listSanPham.add(new SanPham(resourceID, title, content, price, imgPath));
+                    }
+
+                    listSanPhamCategory.add(new SanPhamCategory(nameCategory, listSanPham));
+                }
+
+                // Cập nhật dữ liệu vào adapter
+                sanPhamCategoryAdapter.setData(listSanPhamCategory);
+                sanPhamCategoryAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.e("FirebaseError", "Failed to fetch data: " + error.getMessage());
+            }
+        });
+    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -70,74 +125,25 @@ public class sp_sp_KangarooFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_sp_sp_kangaroo, container, false);
 
+
         rcvSanPhamCategory = view.findViewById(R.id.rcv_sanphamcategory_kangaroo);
         sanPhamCategoryAdapter = new SanPhamCategoryAdapter(requireContext());
 
-        LinearLayoutManager linearLayoutManager =new LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false);
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false);
         rcvSanPhamCategory.setLayoutManager(linearLayoutManager);
 
-        sanPhamCategoryAdapter.setData(getListSanPhamCategory());
+
         rcvSanPhamCategory.setAdapter(sanPhamCategoryAdapter);
+
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("SanPhamCategory");
+        fetchSanPhamCategoryFromFirebase();
+
+
 
         return view;
     }
 
-    private List<SanPhamCategory> getListSanPhamCategory() {
 
-        List<SanPhamCategory> listSanPhamCategory = new ArrayList<>();
-        String content = "Loại máy: Máy lọc nước dạng đứng\n"
-                + "Số lõi lọc: 4 lõi\n"
-                + "Dung tích bình chứa: 5 lít\n"
-                + "Tỷ lệ lọc thải: Lọc 5 thải 5\n"
-                + "Công suất tiêu thụ điện trung bình: 0.048 kW/h\n"
-                ;
-
-
-        List<SanPham> listSanPhamKangaroo_1 = new ArrayList<>();
-        listSanPhamKangaroo_1.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 01", "5.140.000.đ",content));
-        listSanPhamKangaroo_1.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 02", "5.140.000.đ",content));
-        listSanPhamKangaroo_1.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 03", "5.140.000.đ",content));
-        listSanPhamKangaroo_1.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 04", "5.140.000.đ",content));
-        listSanPhamKangaroo_1.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 05", "5.140.000.đ",content));
-
-        List<SanPham> listSanPhamKangaroo_2 = new ArrayList<>();
-        listSanPhamKangaroo_2.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 01", "5.140.000.đ",content));
-        listSanPhamKangaroo_2.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 02", "5.140.000.đ",content));
-        listSanPhamKangaroo_2.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 03", "5.140.000.đ",content));
-        listSanPhamKangaroo_2.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 04", "5.140.000.đ",content));
-        listSanPhamKangaroo_2.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 05", "5.140.000.đ",content));
-
-        List<SanPham> listSanPhamKangaroo_3 = new ArrayList<>();
-        listSanPhamKangaroo_3.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 01", "5.140.000.đ",content));
-        listSanPhamKangaroo_3.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 02", "5.140.000.đ",content));
-        listSanPhamKangaroo_3.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 03", "5.140.000.đ",content));
-        listSanPhamKangaroo_3.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 04", "5.140.000.đ",content));
-        listSanPhamKangaroo_3.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 05", "5.140.000.đ",content));
-
-        List<SanPham> listSanPhamKangaroo_4 = new ArrayList<>();
-        listSanPhamKangaroo_4.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 01", "5.140.000.đ",content));
-        listSanPhamKangaroo_4.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 02", "5.140.000.đ",content));
-        listSanPhamKangaroo_4.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 03", "5.140.000.đ",content));
-        listSanPhamKangaroo_4.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 04", "5.140.000.đ",content));
-        listSanPhamKangaroo_4.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 05", "5.140.000.đ",content));
-
-        List<SanPham> listSanPhamKangaroo_5 = new ArrayList<>();
-        listSanPhamKangaroo_5.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 01", "5.140.000.đ",content));
-        listSanPhamKangaroo_5.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 02", "5.140.000.đ",content));
-        listSanPhamKangaroo_5.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 03", "5.140.000.đ",content));
-        listSanPhamKangaroo_5.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 04", "5.140.000.đ",content));
-        listSanPhamKangaroo_5.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 05", "5.140.000.đ",content));
-
-
-        listSanPhamCategory.add(new SanPhamCategory("Máy lọc nước Kangarro 01",listSanPhamKangaroo_1));
-        listSanPhamCategory.add(new SanPhamCategory("Máy lọc nước Kangarro 02",listSanPhamKangaroo_2));
-        listSanPhamCategory.add(new SanPhamCategory("Máy lọc nước Kangarro 03",listSanPhamKangaroo_3));
-        listSanPhamCategory.add(new SanPhamCategory("Máy lọc nước Kangarro 04",listSanPhamKangaroo_4));
-        listSanPhamCategory.add(new SanPhamCategory("Máy lọc nước Kangarro 05",listSanPhamKangaroo_5));
-
-
-
-
-        return listSanPhamCategory;
-    }
 }

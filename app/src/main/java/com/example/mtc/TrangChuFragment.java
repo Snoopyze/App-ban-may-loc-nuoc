@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Handler;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -172,6 +173,10 @@ public class TrangChuFragment extends Fragment {
         rcvSanPhamCategory.setLayoutManager(linearLayoutManager);
 
         sanPhamCategoryAdapter.setData(getListSanPhamCategory());
+
+
+
+
         rcvSanPhamCategory.setAdapter(sanPhamCategoryAdapter);
 
 
@@ -190,46 +195,46 @@ public class TrangChuFragment extends Fragment {
         List<SanPhamCategory> listSanPhamCategory = new ArrayList<>();
 
         List<SanPham> listSanPhamAOSmith = new ArrayList<>();
-        listSanPhamAOSmith.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 01", "5.140.000.đ", content));
-        listSanPhamAOSmith.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 02", "3.140.000.đ", content));
-        listSanPhamAOSmith.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 03", "4.999.000.đ", content));
-        listSanPhamAOSmith.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 04", "1.999.000.đ", content));
-        listSanPhamAOSmith.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 05", "2.134.000.đ", content));
+        listSanPhamAOSmith.add(new SanPham(0,"Máy lọc nước RO Toshiba GK 116l", "Máy lọc nước RO Toshiba GK 116l 012345", 5140000,"https://aiosmart.com.vn/media/catalog/product/cache/24d0ad29ea4d0b7ccefb253965039c4f/m/_/m_y_l_c_n_c_empire_n_ng_ngu_i_-_10_c_p_l_c_model_epml038_1.jpg"));
+        listSanPhamAOSmith.add(new SanPham(0,"Máy lọc nước RO Toshiba GK 116l", "Máy lọc nước RO Toshiba GK 116l 012345", 5140000,"https://aiosmart.com.vn/media/catalog/product/cache/24d0ad29ea4d0b7ccefb253965039c4f/m/_/m_y_l_c_n_c_empire_n_ng_ngu_i_-_10_c_p_l_c_model_epml038_1.jpg"));
+        listSanPhamAOSmith.add(new SanPham(0,"Máy lọc nước RO Toshiba GK 116l", "Máy lọc nước RO Toshiba GK 116l 012345", 5140000,"https://aiosmart.com.vn/media/catalog/product/cache/24d0ad29ea4d0b7ccefb253965039c4f/m/_/m_y_l_c_n_c_empire_n_ng_ngu_i_-_10_c_p_l_c_model_epml038_1.jpg"));
+        listSanPhamAOSmith.add(new SanPham(0,"Máy lọc nước RO Toshiba GK 116l", "Máy lọc nước RO Toshiba GK 116l 012345", 5140000,"https://aiosmart.com.vn/media/catalog/product/cache/24d0ad29ea4d0b7ccefb253965039c4f/m/_/m_y_l_c_n_c_empire_n_ng_ngu_i_-_10_c_p_l_c_model_epml038_1.jpg"));
+        listSanPhamAOSmith.add(new SanPham(0,"Máy lọc nước RO Toshiba GK 116l", "Máy lọc nước RO Toshiba GK 116l 012345", 5140000,"https://aiosmart.com.vn/media/catalog/product/cache/24d0ad29ea4d0b7ccefb253965039c4f/m/_/m_y_l_c_n_c_empire_n_ng_ngu_i_-_10_c_p_l_c_model_epml038_1.jpg"));
 
-        List<SanPham> listSanPhamKarofi = new ArrayList<>();
-        listSanPhamKarofi.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Karofi GK 116l 01", "2.134.000.đ", content));
-        listSanPhamKarofi.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Karofi GK 116l 02", "4.999.000.đ", content));
-        listSanPhamKarofi.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Karofi GK 116l 03", "3.140.000.đ", content));
-        listSanPhamKarofi.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Karofi GK 116l 04", "5.140.000.đ", content));
-        listSanPhamKarofi.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Karofi GK 116l 05", "1.999.000.đ", content));
+//        List<SanPham> listSanPhamKarofi = new ArrayList<>();
+//        listSanPhamKarofi.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Karofi GK 116l 01", "2.134.000.đ", 514));
+//        listSanPhamKarofi.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Karofi GK 116l 02", "4.999.000.đ", 514));
+//        listSanPhamKarofi.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Karofi GK 116l 03", "3.140.000.đ", 514));
+//        listSanPhamKarofi.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Karofi GK 116l 04", "5.140.000.đ", 514));
+//        listSanPhamKarofi.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Karofi GK 116l 05", "1.999.000.đ", 514));
 
-        List<SanPham> listSanPhamKangaroo = new ArrayList<>();
-        listSanPhamKangaroo.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 01", "3.140.000.đ", content));
-        listSanPhamKangaroo.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 02", "5.140.000.đ", content));
-        listSanPhamKangaroo.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 03", "1.999.000.đ", content));
-        listSanPhamKangaroo.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 04", "2.134.000.đ", content));
-        listSanPhamKangaroo.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 05", "4.999.000.đ", content));
-
-        List<SanPham> listSanPhamSunhouse = new ArrayList<>();
-        listSanPhamSunhouse.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Sunhouse GK 116l 01", "2.134.000.đ", content));
-        listSanPhamSunhouse.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Sunhouse GK 116l 02", "1.999.000.đ", content));
-        listSanPhamSunhouse.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Sunhouse GK 116l 03", "5.140.000.đ", content));
-        listSanPhamSunhouse.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Sunhouse GK 116l 04", "4.999.000.đ", content));
-        listSanPhamSunhouse.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Sunhouse GK 116l 05", "5.140.000.đ", content));
-
-        List<SanPham> listSanPhamToshiba = new ArrayList<>();
-        listSanPhamToshiba.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Toshiba GK 116l 01", "4.999.000.đ", content));
-        listSanPhamToshiba.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Toshiba GK 116l 02", "1.999.000.đ", content));
-        listSanPhamToshiba.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Toshiba GK 116l 03", "3.140.000.đ", content));
-        listSanPhamToshiba.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Toshiba GK 116l 04", "5.140.000.đ", content));
-        listSanPhamToshiba.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Toshiba GK 116l 05", "2.134.000.đ", content));
-
-
+//        List<SanPham> listSanPhamKangaroo = new ArrayList<>();
+//        listSanPhamKangaroo.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 01", "3.140.000.đ", content));
+//        listSanPhamKangaroo.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 02", "5.140.000.đ", content));
+//        listSanPhamKangaroo.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 03", "1.999.000.đ", content));
+//        listSanPhamKangaroo.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 04", "2.134.000.đ", content));
+//        listSanPhamKangaroo.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO kangaroo GK 116l 05", "4.999.000.đ", content));
+//
+//        List<SanPham> listSanPhamSunhouse = new ArrayList<>();
+//        listSanPhamSunhouse.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Sunhouse GK 116l 01", "2.134.000.đ", content));
+//        listSanPhamSunhouse.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Sunhouse GK 116l 02", "1.999.000.đ", content));
+//        listSanPhamSunhouse.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Sunhouse GK 116l 03", "5.140.000.đ", content));
+//        listSanPhamSunhouse.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Sunhouse GK 116l 04", "4.999.000.đ", content));
+//        listSanPhamSunhouse.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Sunhouse GK 116l 05", "5.140.000.đ", content));
+//
+//        List<SanPham> listSanPhamToshiba = new ArrayList<>();
+//        listSanPhamToshiba.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Toshiba GK 116l 01", "4.999.000.đ", content));
+//        listSanPhamToshiba.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Toshiba GK 116l 02", "1.999.000.đ", content));
+//        listSanPhamToshiba.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Toshiba GK 116l 03", "3.140.000.đ", content));
+//        listSanPhamToshiba.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Toshiba GK 116l 04", "5.140.000.đ", content));
+//        listSanPhamToshiba.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Toshiba GK 116l 05", "2.134.000.đ", content));
+//
+//
         listSanPhamCategory.add(new SanPhamCategory("Máy lọc nước AO Smith",listSanPhamAOSmith));
-        listSanPhamCategory.add(new SanPhamCategory("Máy lọc nước Karofi",listSanPhamKarofi));
-        listSanPhamCategory.add(new SanPhamCategory("Máy lọc nước Kangarro",listSanPhamKangaroo));
-        listSanPhamCategory.add(new SanPhamCategory("Máy lọc nước Sunhouse",listSanPhamSunhouse));
-        listSanPhamCategory.add(new SanPhamCategory("Máy lọc nước Toshiba",listSanPhamToshiba));
+//        listSanPhamCategory.add(new SanPhamCategory("Máy lọc nước Karofi",listSanPhamKarofi));
+//        listSanPhamCategory.add(new SanPhamCategory("Máy lọc nước Kangarro",listSanPhamKangaroo));
+//        listSanPhamCategory.add(new SanPhamCategory("Máy lọc nước Sunhouse",listSanPhamSunhouse));
+//        listSanPhamCategory.add(new SanPhamCategory("Máy lọc nước Toshiba",listSanPhamToshiba));
 
 
 

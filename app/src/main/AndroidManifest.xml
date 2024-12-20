@@ -45,6 +45,8 @@
         <activity
             android:name=".DangKi"
             android:exported="false" />
+        <activity android:name=".activity.GioHangActivity"
+            android:exported="false"/>
         <activity android:name=".TrangChu" /> <!-- <activity android:name=".sp_nc_LienHe"/> -->
         <activity android:name=".sp_SanPham" />
         <activity

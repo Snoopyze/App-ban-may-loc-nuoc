@@ -28,16 +28,6 @@ public class SanPhamCategory {
     public void setList(List<SanPham> list) {
         this.list = list;
     }
-//    public SanPhamCategory(List<SanPham> list) {
-//        this.list = list;
-//    }
-//
-//    public List<SanPham> getList() {
-//        return list;
-//    }
-//
-//    public void setList(List<SanPham> list) {
-//        this.list = list;
-//    }
+
 }
 

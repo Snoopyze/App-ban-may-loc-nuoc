@@ -2,13 +2,21 @@ package com.example.mtc;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,6 +72,10 @@ public class sp_sp_AOsmithFragment extends Fragment {
     private SanPhamCategoryAdapter sanPhamCategoryAdapter;
 
 
+
+
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -77,70 +89,14 @@ public class sp_sp_AOsmithFragment extends Fragment {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false);
         rcvSanPhamCategory.setLayoutManager(linearLayoutManager);
 
-        sanPhamCategoryAdapter.setData(getListSanPhamCategory());
-        rcvSanPhamCategory.setAdapter(sanPhamCategoryAdapter);
 
         return view;
     }
 
 
-    private List<SanPhamCategory> getListSanPhamCategory() {
-        List<SanPhamCategory> listSanPhamCategory = new ArrayList<>();
-        String content = "Loại máy: Máy lọc nước dạng đứng\n"
-                + "Số lõi lọc: 4 lõi\n"
-                + "Dung tích bình chứa: 5 lít\n"
-                + "Tỷ lệ lọc thải: Lọc 5 thải 5\n"
-                + "Công suất tiêu thụ điện trung bình: 0.048 kW/h\n"
-                ;
-
-
-        List<SanPham> listSanPhamAOSmith_1 = new ArrayList<>();
-        listSanPhamAOSmith_1.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 01", "5.140.000.đ", content));
-        listSanPhamAOSmith_1.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 02", "5.140.000.đ", content));
-        listSanPhamAOSmith_1.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 03", "5.140.000.đ", content));
-        listSanPhamAOSmith_1.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 04", "5.140.000.đ", content));
-        listSanPhamAOSmith_1.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 05", "5.140.000.đ", content));
-
-        List<SanPham> listSanPhamAOSmith_2 = new ArrayList<>();
-        listSanPhamAOSmith_2.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 01", "5.140.000.đ", content));
-        listSanPhamAOSmith_2.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 02", "5.140.000.đ", content));
-        listSanPhamAOSmith_2.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 03", "5.140.000.đ", content));
-        listSanPhamAOSmith_2.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 04", "5.140.000.đ", content));
-        listSanPhamAOSmith_2.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 05", "5.140.000.đ", content));
-
-        List<SanPham> listSanPhamAOSmith_3 = new ArrayList<>();
-        listSanPhamAOSmith_3.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 01", "5.140.000.đ", content));
-        listSanPhamAOSmith_3.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 02", "5.140.000.đ", content));
-        listSanPhamAOSmith_3.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 03", "5.140.000.đ", content));
-        listSanPhamAOSmith_3.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 04", "5.140.000.đ", content));
-        listSanPhamAOSmith_3.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 05", "5.140.000.đ", content));
-
-        List<SanPham> listSanPhamAOSmith_4 = new ArrayList<>();
-        listSanPhamAOSmith_4.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 01", "5.140.000.đ", content));
-        listSanPhamAOSmith_4.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 02", "5.140.000.đ", content));
-        listSanPhamAOSmith_4.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 03", "5.140.000.đ", content));
-        listSanPhamAOSmith_4.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 04", "5.140.000.đ", content));
-        listSanPhamAOSmith_4.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 05", "5.140.000.đ", content));
-
-        List<SanPham> listSanPhamAOSmith_5 = new ArrayList<>();
-        listSanPhamAOSmith_5.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 01", "5.140.000.đ", content));
-        listSanPhamAOSmith_5.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 02", "5.140.000.đ", content));
-        listSanPhamAOSmith_5.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 03", "5.140.000.đ", content));
-        listSanPhamAOSmith_5.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 04", "5.140.000.đ", content));
-        listSanPhamAOSmith_5.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO AO Smith GK 116l 05", "5.140.000.đ", content));
 
 
 
 
-        listSanPhamCategory.add(new SanPhamCategory("Máy lọc nước AO Smith 01",listSanPhamAOSmith_1));
-        listSanPhamCategory.add(new SanPhamCategory("Máy lọc nước AO Smith 02",listSanPhamAOSmith_2));
-        listSanPhamCategory.add(new SanPhamCategory("Máy lọc nước AO Smith 03",listSanPhamAOSmith_3));
-        listSanPhamCategory.add(new SanPhamCategory("Máy lọc nước AO Smith 04",listSanPhamAOSmith_4));
-        listSanPhamCategory.add(new SanPhamCategory("Máy lọc nước AO Smith 05",listSanPhamAOSmith_5));
 
-
-
-
-        return listSanPhamCategory;
-    }
 }

@@ -64,6 +64,16 @@ dependencies {
     implementation ("com.hbb20:ccp:2.5.4")
     implementation("com.googlecode.libphonenumber:libphonenumber:8.12.48")
 
+    implementation(platform("com.google.firebase:firebase-bom:33.6.0"))
+    implementation(platform("com.google.firebase:firebase-messaging"))
+    implementation("com.google.firebase:firebase-database")
+    implementation("com.google.firebase:firebase-auth")
+
+
+    implementation ("me.relex:circleindicator:2.1.6")
+    implementation ("de.hdodenhof:circleimageview:2.1.0")
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.16.0")
 
 }
 

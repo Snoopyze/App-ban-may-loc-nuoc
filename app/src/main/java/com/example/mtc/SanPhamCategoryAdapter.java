@@ -45,7 +45,7 @@ public class SanPhamCategoryAdapter extends RecyclerView.Adapter<SanPhamCategory
     @Override
     public SanPhamCategoryViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_sanpham_category, parent, false);
-        return new  SanPhamCategoryViewHolder(view);
+        return new SanPhamCategoryViewHolder(view);
     }
 
     @Override
@@ -84,7 +84,7 @@ public class SanPhamCategoryAdapter extends RecyclerView.Adapter<SanPhamCategory
         return 0;
     }
 
-    public class SanPhamCategoryViewHolder extends RecyclerView.ViewHolder {
+    public static class SanPhamCategoryViewHolder extends RecyclerView.ViewHolder {
         private TextView textView;
         private RecyclerView rcvSanPham;
 

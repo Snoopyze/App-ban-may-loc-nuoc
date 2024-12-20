@@ -14,6 +14,8 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.List;
 
 public class SanPhamAdapter extends RecyclerView.Adapter<SanPhamAdapter.SanPhamViewHolder> {
@@ -63,9 +65,16 @@ public class SanPhamAdapter extends RecyclerView.Adapter<SanPhamAdapter.SanPhamV
             return;
         }
 
-        holder.imgSanPham.setImageResource(sanPham.getResourceID());
+//        holder.imgSanPham.setImageResource(sanPham.getResourceID());
+
+        Glide.with(mContext)
+                .load(sanPham.getIgmPath())
+                .into(holder.imgSanPham);
         holder.tenSanPham.setText(sanPham.getTittle());
-        holder.giaSanPham.setText(sanPham.getPrice());
+        holder.giaSanPham.setText(String.valueOf(sanPham.getPrice()));
+
+
+
         holder.layoutItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

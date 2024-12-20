@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -77,7 +78,11 @@ public class sp_sp_ToshibaFragment extends Fragment {
         rcvSanPhamCategory.setLayoutManager(linearLayoutManager);
 
         sanPhamCategoryAdapter.setData(getListSanPhamCategory());
+
+
         rcvSanPhamCategory.setAdapter(sanPhamCategoryAdapter);
+
+
 
 
         return view;
@@ -92,47 +97,19 @@ public class sp_sp_ToshibaFragment extends Fragment {
                 + "Công suất tiêu thụ điện trung bình: 0.048 kW/h\n"
                 ;
         List<SanPham> listSanPhamToshiba_1 = new ArrayList<>();
-        listSanPhamToshiba_1.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Toshiba GK 116l 01", "5.140.000.đ", content));
-        listSanPhamToshiba_1.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Toshiba GK 116l 02", "5.140.000.đ", content));
-        listSanPhamToshiba_1.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Toshiba GK 116l 03", "5.140.000.đ", content));
-        listSanPhamToshiba_1.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Toshiba GK 116l 04", "5.140.000.đ", content));
-        listSanPhamToshiba_1.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Toshiba GK 116l 05", "5.140.000.đ", content));
-
-        List<SanPham> listSanPhamToshiba_2 = new ArrayList<>();
-        listSanPhamToshiba_2.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Toshiba GK 116l 01", "5.140.000.đ", content));
-        listSanPhamToshiba_2.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Toshiba GK 116l 02", "5.140.000.đ", content));
-        listSanPhamToshiba_2.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Toshiba GK 116l 03", "5.140.000.đ", content));
-        listSanPhamToshiba_2.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Toshiba GK 116l 04", "5.140.000.đ", content));
-        listSanPhamToshiba_2.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Toshiba GK 116l 05", "5.140.000.đ", content));
-
-        List<SanPham> listSanPhamToshiba_3 = new ArrayList<>();
-        listSanPhamToshiba_3.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Toshiba GK 116l 01", "5.140.000.đ", content));
-        listSanPhamToshiba_3.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Toshiba GK 116l 02", "5.140.000.đ", content));
-        listSanPhamToshiba_3.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Toshiba GK 116l 03", "5.140.000.đ", content));
-        listSanPhamToshiba_3.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Toshiba GK 116l 04", "5.140.000.đ", content));
-        listSanPhamToshiba_3.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Toshiba GK 116l 05", "5.140.000.đ", content));
-
-        List<SanPham> listSanPhamToshiba_4 = new ArrayList<>();
-        listSanPhamToshiba_4.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Toshiba GK 116l 01", "5.140.000.đ", content));
-        listSanPhamToshiba_4.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Toshiba GK 116l 02", "5.140.000.đ", content));
-        listSanPhamToshiba_4.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Toshiba GK 116l 03", "5.140.000.đ", content));
-        listSanPhamToshiba_4.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Toshiba GK 116l 04", "5.140.000.đ", content));
-        listSanPhamToshiba_4.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Toshiba GK 116l 05", "5.140.000.đ", content));
-
-        List<SanPham> listSanPhamToshiba_5 = new ArrayList<>();
-        listSanPhamToshiba_5.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Toshiba GK 116l 01", "5.140.000.đ", content));
-        listSanPhamToshiba_5.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Toshiba GK 116l 02", "5.140.000.đ", content));
-        listSanPhamToshiba_5.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Toshiba GK 116l 03", "5.140.000.đ", content));
-        listSanPhamToshiba_5.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Toshiba GK 116l 04", "5.140.000.đ", content));
-        listSanPhamToshiba_5.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Toshiba GK 116l 05", "5.140.000.đ", content));
-
+    //        listSanPhamToshiba_1.add(new SanPham(0,"Máy lọc nước RO Toshiba GK 116l", "Máy lọc nước RO Toshiba GK 116l 012345", 5140000,"R.drawable.mln_ro_kangaroo_kg116i_10_loi"));
+    //        listSanPhamToshiba_1.add(new SanPham(0,"Máy lọc nước RO Toshiba GK 116l", "Máy lọc nước RO Toshiba GK 116l 012345", 5140000,"https://nshopvn.com/wp-content/uploads/2019/03/so-do-ket-noi-cam-bien-am-thanh-ky-037.jpg"));
+    //        listSanPhamToshiba_1.add(new SanPham(0,"Máy lọc nước RO Toshiba GK 116l", "Máy lọc nước RO Toshiba GK 116l 012345", 5140000,"https://nshopvn.com/wp-content/uploads/2019/03/so-do-ket-noi-cam-bien-am-thanh-ky-037.jpg"));
+    //        listSanPhamToshiba_1.add(new SanPham(0,"Máy lọc nước RO Toshiba GK 116l", "Máy lọc nước RO Toshiba GK 116l 012345", 5140000,"https://nshopvn.com/wp-content/uploads/2019/03/so-do-ket-noi-cam-bien-am-thanh-ky-037.jpg"));
+    //        listSanPhamToshiba_1.add(new SanPham(0,"Máy lọc nước RO Toshiba GK 116l", "Máy lọc nước RO Toshiba GK 116l 012345", 5140000,"https://nshopvn.com/wp-content/uploads/2019/03/so-do-ket-noi-cam-bien-am-thanh-ky-037.jpg"));
+//        listSanPhamToshiba_1.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Sunhouse GK 116l 01", content,514000000));
+//        listSanPhamToshiba_1.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Sunhouse GK 116l 01", content,514000000));
+//        listSanPhamToshiba_1.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Sunhouse GK 116l 01", content,514000000));
+//        listSanPhamToshiba_1.add(new SanPham(R.drawable.mln_ro_kangaroo_kg116i_10_loi, "Máy lọc nước RO Sunhouse GK 116l 01", content,514000000));
 
         listSanPhamCategory.add(new SanPhamCategory("Máy lọc nước Toshiba 01",listSanPhamToshiba_1));
-        listSanPhamCategory.add(new SanPhamCategory("Máy lọc nước Toshiba 02",listSanPhamToshiba_2));
-        listSanPhamCategory.add(new SanPhamCategory("Máy lọc nước Toshiba 03",listSanPhamToshiba_3));
-        listSanPhamCategory.add(new SanPhamCategory("Máy lọc nước Toshiba 04",listSanPhamToshiba_4));
-        listSanPhamCategory.add(new SanPhamCategory("Máy lọc nước Toshiba 01",listSanPhamToshiba_5));
-
+//
+//
 
 
 
